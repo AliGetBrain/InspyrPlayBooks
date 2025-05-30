@@ -1,0 +1,29 @@
+{
+  "name": "inspyr_playbooks",
+  "version": "1.0.0",
+  "description": "playbooks for inspyr",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:Invoice1": "nodemon Email_Templates/Invoice1.js --ext js",
+    "dev:Invoice2": "nodemon Email_Templates/Invoice2.js --ext js",
+    "dev:Invoice3": "nodemon Email_Templates/Invoice3.js --ext js",
+    "dev:Invoice4": "nodemon Email_Templates/Invoice4.js --ext js",
+    "dev:Invoice5": "nodemon Email_Templates/Invoice5.js --ext js",
+    "dev:Invoice6": "nodemon Email_Templates/Invoice6.js --ext js",
+    "dev:Invoice7": "nodemon Email_Templates/Invoice7.js --ext js",
+    "dev:CallSummary": "nodemon Email_Templates/CallSummary.js --ext js",
+    "dev:FirstFailedCall": "nodemon Email_Templates/FirstFailedCall.js --ext js",
+    "dev:SecondFailedCall": "nodemon Email_Templates/SecondFailedCall.js --ext js",
+    "dev:ThirdFailedCall": "nodemon Email_Templates/ThirdFailedCall.js --ext js",
+    "dev:PaymentCheck": "nodemon Email_Templates/PaymentCheck.js --ext js",
+    "dev:CheckPaused": "nodemon Email_Templates/CheckPausedInvoices.js --ext js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "handlebars": "^4.7.8",
+    "nodemon": "^3.1.10"
+  }
+}
