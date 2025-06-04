@@ -13,18 +13,25 @@ const emailMessage = `<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice Outreach</title>
 </head>
-<body style="font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #1f2937; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #f9fafb;">
+<body style="font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #1f2937; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #F8FBFF;">
    <!-- Header -->
-    <div style="margin-bottom: 12px; background: {{primaryColor}}; border-radius: 8px 8px 0 0; padding: 15px; text-align: center; font-family: Arial, Helvetica, sans-serif;">
+    <div style="margin-bottom: 12px; background: white; border-color:{{primaryColor}}; border-bottom: 3px solid {{primaryColor}}; border-radius: 8px; text-align: center; font-family: Arial, Helvetica, sans-serif;">
         <table width="100%" cellpadding="0" cellspacing="0" border="0">
             <tr>
-                <td>
-                    <h1 style="color: white; margin: 0; font-size: 1.5rem; font-weight: 600; letter-spacing: 0.025em;">INVOICE 60+ DAYS OVERDUE</h1>
-                    <p style="color: rgba(255, 255, 255, 0.9); margin: 8px 0 0 0; font-size: 1rem;">{{contactCompanyName}} #{{customerNumber}}</p>
-                </td>
+              <td>
+                <div style="margin: 15px 20px 0 0;">
+                  <img src="https://raw.githubusercontent.com/AliGetBrain/Logo-Storage/main/IS_logo-full_RGB_250x80.png" width="250" height="80" alt="Logo">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2 style="margin: 0 0 5px 0; font-weight: 600; letter-spacing: 0.025em;">INVOICE <span style="color: {{primaryColor}};">60+ DAYS OVERDUE</span></h2>
+                <p style="font-weight: 600; margin: 0 0 15px 0; font-size: 1rem;">{{contactCompanyName}} #{{customerNumber}}</p>
+              </td>
             </tr>
         </table>
-    </div>  
+    </div>    
      
     <!-- Message Section -->
     <div style="margin-bottom: 12px; padding: 24px; background-color: white; border-radius: 8px; color: #4b5563; font-family: Arial, Helvetica, sans-serif;">
@@ -44,18 +51,19 @@ const emailMessage = `<!DOCTYPE html>
     </div>
   
     <!-- Company Info -->
-    <div style="background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); position: relative; overflow: hidden;">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 40px;">
+    <div style="background: white; border-radius: 8px; padding: 40px; position: relative; overflow: hidden;">
+        <!-- Company Info -->
+        <div style="display: flex; justify-content: space-between; margin-bottom: 25px;">
             <div>
                 <div style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 12px; font-weight: 600;">REMIT TO</div>
-                <div style="font-weight: 600; color: #374151;">INSPYR Solutions, LLC</div>
+                <div style="font-weight: 600; color: #4b5563;">INSPYR Solutions, LLC</div>
                 <div>PO Drawer 1217</div>
                 <div>Dallas, TX 75373-7249</div>
             </div>
         </div>
 
         <!-- Invoice Title -->
-        <div style="color: {{primaryColor}}; font-size: 40px; font-weight: 700; margin: 0 0 40px 0; letter-spacing: -0.5px; position: relative; display: inline-block; padding-bottom: 10px; border-bottom: 3px solid {{primaryColor}};">
+        <div style="color: {{primaryColor}}; font-size: 40px; font-weight: 700; margin-bottom: 25px; letter-spacing: -0.5px; position: relative; display: inline-block;">
             INVOICE
         </div>
 
@@ -64,18 +72,18 @@ const emailMessage = `<!DOCTYPE html>
             <tr>
                 <td style="width: 50%;">
                     <div style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 12px; font-weight: 600;">BILL TO</div>
-                    {{#if contactName}}<div style="font-weight: 600; color: #374151;">{{contactName}}</div>{{/if}}
-                    {{#if contactCompanyName}} {{#if (ne contactCompanyName contactName)}}<div>{{contactCompanyName}}</div>{{/if}} {{/if}}
-                    {{#if contactBillAddr.streetAddress}}<div>{{contactBillAddr.streetAddress}}</div>{{/if}}
-                    {{#if (all contactBillAddr.city contactBillAddr.state)}}<div>{{contactBillAddr.city}}, {{contactBillAddr.state}} {{#if contactBillAddr.zipCode}}{{contactBillAddr.zipCode}}{{/if}}</div>{{/if}}
+                    {{#if contactName}}<div style="font-weight: 600; color: #4b5563;">{{contactName}}</div>{{/if}}
+                    {{#if contactCompanyName}} {{#if (ne contactCompanyName contactName)}}<div style="color: #4b5563;">{{contactCompanyName}}</div>{{/if}} {{/if}}
+                    {{#if contactBillAddr.streetAddress}}<div style="color: #4b5563;">{{contactBillAddr.streetAddress}}</div>{{/if}}
+                    {{#if (all contactBillAddr.city contactBillAddr.state)}}<div style="color: #4b5563;">{{contactBillAddr.city}}, {{contactBillAddr.state}} {{#if contactBillAddr.zipCode}}{{contactBillAddr.zipCode}}{{/if}}</div>{{/if}}
                 </td>
               
                 <td style="width: 50%; text-align: left; padding-left: 25%;">
-                    {{#if customerNumber}}<div><span style="font-weight: 600; color: #374151; font-size: 0.8rem;">CUSTOMER</span> #{{customerNumber}}</div>{{/if}}
-                    {{#if invoiceNumber}}<div><span style="font-weight: 600; color: #374151; font-size: 0.8rem;">INVOICE</span> #{{invoiceNumber}}</div>{{/if}}
-                    {{#if transactionDate}}<div><span style="font-weight: 600; color: #374151; font-size: 0.8rem;">DATE-</span> {{transactionDate}}</div>{{/if}}
-                    {{#if dueDate}}<div><span style="font-weight: 600; color: #374151; font-size: 0.8rem;">DUE DATE-</span> {{dueDate}}</div>{{/if}}
-                    {{#if salesTerm}}<div><span style="font-weight: 600; color: #374151; font-size: 0.8rem;">TERMS-</span> {{salesTerm}}</div>{{/if}}
+                    {{#if customerNumber}}<div><span style="font-weight: 600; color: #4b5563; font-size: 0.8rem;">CUSTOMER</span> #{{customerNumber}}</div>{{/if}}
+                    {{#if invoiceNumber}}<div><span style="font-weight: 600; color: #4b5563; font-size: 0.8rem;">INVOICE</span> #{{invoiceNumber}}</div>{{/if}}
+                    {{#if transactionDate}}<div><span style="font-weight: 600; color: #4b5563; font-size: 0.8rem;">DATE-</span> {{transactionDate}}</div>{{/if}}
+                    {{#if dueDate}}<div><span style="font-weight: 600; color: #4b5563; font-size: 0.8rem;">DUE DATE-</span> {{dueDate}}</div>{{/if}}
+                    {{#if salesTerm}}<div><span style="font-weight: 600; color: #4b5563; font-size: 0.8rem;">TERMS-</span> {{salesTerm}}</div>{{/if}}
                 </td>
             </tr>
         </table>
@@ -87,23 +95,23 @@ const emailMessage = `<!DOCTYPE html>
             <table cellpadding="0" cellspacing="0" style="width: 100%; border-collapse: separate; margin: 25px 0;">
               <thead>
                 <tr>
-                  <th style="background-color: {{primaryColor}}; padding: 12px 24px; text-align: left; font-size: 0.875rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; width: 10%;">DATE</th>
-                  <th style="background-color: {{primaryColor}}; padding: 12px 16px; text-align: left; font-size: 0.875rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; width: 20%;">SERVICE</th>
-                  <th style="background-color: {{primaryColor}}; padding: 12px 4px; text-align: left; font-size: 0.875rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; width: 42%;">DESCRIPTION</th>
-                  <th style="background-color: {{primaryColor}}; padding: 12px 16px; text-align: center; font-size: 0.875rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; width: 8%;">QTY</th>
-                  <th style="background-color: {{primaryColor}}; padding: 12px 16px; text-align: center; font-size: 0.875rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; width: 8%;">RATE</th>
-                  <th style="background-color: {{primaryColor}}; padding: 12px 16px; text-align: center; font-size: 0.875rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; width: 12%;">AMOUNT</th>
+                  <th style="border-bottom: 2px solid {{primaryColor}}; padding: 12px 24px; text-align: left; font-size: 0.875rem; font-weight: 600; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em; width: 10%;">DATE</th>
+                  <th style="border-bottom: 2px solid {{primaryColor}}; padding: 12px 16px; text-align: left; font-size: 0.875rem; font-weight: 600; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em; width: 20%;">SERVICE</th>
+                  <th style="border-bottom: 2px solid {{primaryColor}}; padding: 12px 16px; text-align: left; font-size: 0.875rem; font-weight: 600; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em; width: 42%;">DESCRIPTION</th>
+                  <th style="border-bottom: 2px solid {{primaryColor}}; padding: 12px 16px; text-align: center; font-size: 0.875rem; font-weight: 600; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em; width: 8%;">QTY</th>
+                  <th style="border-bottom: 2px solid {{primaryColor}}; padding: 12px 16px; text-align: center; font-size: 0.875rem; font-weight: 600; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em; width: 8%;">RATE</th>
+                  <th style="border-bottom: 2px solid {{primaryColor}}; padding: 12px 16px; text-align: center; font-size: 0.875rem; font-weight: 600; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em; width: 12%;">AMOUNT</th>
                 </tr>
               </thead>
               <tbody>
                 {{#each lineItems}}
                   <tr>
-                    <td style="padding: 16px; border-bottom: 1px solid #e5e7eb; color: #4b5563; font-size: 0.875rem;">{{#if serviceDate}}{{ serviceDate}}{{else}}&nbsp;{{/if}}</td>
-                    <td style="padding: 16px; border-bottom: 1px solid #e5e7eb; color: #4b5563; font-size: 0.875rem;">{{service}}</td>
-                    <td style="border-bottom: 1px solid #e5e7eb; color: #4b5563; font-size: 0.875rem;">{{description}}</td>
-                    <td style="padding: 16px; border-bottom: 1px solid #e5e7eb; color: #4b5563; font-size: 0.875rem; text-align: center;">{{quantity}}</td>
-                    <td style="padding: 16px; border-bottom: 1px solid #e5e7eb; color: #4b5563; font-size: 0.875rem; text-align: center;">{{rate}}</td>
-                    <td style="padding: 16px; border-bottom: 1px solid #e5e7eb; color: #4b5563; font-size: 0.875rem; text-align: center;">{{amount}}</td>
+                    <td style="background-color: #F8FBFF; padding: 8px 12px; font-size: 0.875rem;">{{#if serviceDate}}{{ serviceDate}}{{else}}&nbsp;{{/if}}</td>
+                    <td style="background-color: #F8FBFF; padding: 8px 12px; font-size: 0.875rem;">{{service}}</td>
+                    <td style="background-color: #F8FBFF; padding: 8px 0; font-size: 0.875rem;">{{description}}</td>
+                    <td style="background-color: #F8FBFF; padding: 8px 12px; font-size: 0.875rem; text-align: center;">{{quantity}}</td>
+                    <td style="background-color: #F8FBFF; padding: 8px 12px; font-size: 0.875rem; text-align: center;">{{#if (gt quantity 1)}}\${{rate}}{{/if}}</td>
+                    <td style="background-color: #F8FBFF; padding: 8px 12px; font-size: 0.875rem; text-align: center;">\${{amount}}</td>
                   </tr>
                 {{/each}}
               </tbody>
@@ -112,21 +120,21 @@ const emailMessage = `<!DOCTYPE html>
             <table cellpadding="0" cellspacing="0" style="width: 100%; border-collapse: separate; margin: 30px 0;">
               <thead>
                 <tr>
-              <th style="background-color: {{primaryColor}}; padding: 12px 20px; text-align: left; font-size: 0.875rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; width: 20%;">SERVICE</th>
-              <th style="background-color: {{primaryColor}}; padding: 12px 4px; text-align: left; font-size: 0.875rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; width: 45%;">DESCRIPTION</th>
-              <th style="background-color: {{primaryColor}}; padding: 12px 1px; text-align: center; font-size: 0.875rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; width: 8%;">QTY</th>
-              <th style="background-color: {{primaryColor}}; padding: 12px 16px; text-align: center; font-size: 0.875rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; width: 12%;">RATE</th>
-              <th style="background-color: {{primaryColor}}; padding: 12px 16px; text-align: center; font-size: 0.875rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; width: 15%;">AMOUNT</th>
+              <th style="border-bottom: 2px solid {{primaryColor}}; padding: 12px 24px; text-align: left; font-size: 0.875rem; font-weight: 600; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em; width: 20%;">SERVICE</th>
+              <th style="border-bottom: 2px solid {{primaryColor}}; padding: 12px 16px; text-align: left; font-size: 0.875rem; font-weight: 600; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em; width: 45%;">DESCRIPTION</th>
+              <th style="border-bottom: 2px solid {{primaryColor}}; padding: 12px 16px; text-align: center; font-size: 0.875rem; font-weight: 600; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em; width: 8%;">QTY</th>
+              <th style="border-bottom: 2px solid {{primaryColor}}; padding: 12px 16px; text-align: center; font-size: 0.875rem; font-weight: 600; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em; width: 12%;">RATE</th>
+              <th style="border-bottom: 2px solid {{primaryColor}}; padding: 12px 16px; text-align: center; font-size: 0.875rem; font-weight: 600; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em; width: 15%;">AMOUNT</th>
                 </tr>
               </thead>
               <tbody>
                 {{#each lineItems}}
                   <tr>
-                    <td style="padding: 16px;border-bottom: 1px solid #e5e7eb; color: #4b5563; text-align: left; width: 20%; font-size: 0.875rem;">{{service}}</td>
-                    <td style="border-bottom: 1px solid #e5e7eb; color: #4b5563; text-align: left; width: 45%; font-size: 0.875rem;">{{description}}</td>
-                    <td style="padding: 16px; border-bottom: 1px solid #e5e7eb; color: #4b5563; text-align: center; width: 8%; font-size: 0.875rem;">{{quantity}}</td>
-                    <td style="padding: 16px; border-bottom: 1px solid #e5e7eb; color: #4b5563; text-align: center; width: 12%; font-size: 0.875rem;">{{ rate}}</td>
-                    <td style="padding: 16px; border-bottom: 1px solid #e5e7eb; color: #4b5563; text-align: center; width: 15%; font-size: 0.875rem;">{{ amount}}</td>
+                    <td style="background-color: #F8FBFF; padding: 8px 12px; text-align: left; width: 20%; font-size: 0.875rem;">{{service}}</td>
+                    <td style="background-color: #F8FBFF; padding: 8px 12px; text-align: left; width: 45%; font-size: 0.875rem;">{{description}}</td>
+                    <td style="background-color: #F8FBFF; padding: 8px 12px; text-align: center; width: 8%; font-size: 0.875rem;">{{quantity}}</td>
+                    <td style="background-color: #F8FBFF; padding: 8px 12px; text-align: center; width: 12%; font-size: 0.875rem;">{{#if (gt quantity 1)}}\${{rate}}{{/if}}</td>
+                    <td style="background-color: #F8FBFF; padding: 8px 12px; text-align: center; width: 15%; font-size: 0.875rem;">\${{amount}}</td>
                   </tr>
                 {{/each}}
               </tbody>
@@ -144,14 +152,14 @@ const emailMessage = `<!DOCTYPE html>
                             <table cellpadding="0" cellspacing="0"">
                                 {{#if customMessage}}
                                 <tr>
-                                    <td style="color: #6b7280; font-size: 0.85rem; text-align: left; padding-bottom: 20px;">
+                                    <td style="color: #4b5563; font-size: 0.85rem; text-align: left; padding-bottom: 20px;">
                                         {{customMessage}}
                                     </td>
                                 </tr>
                                 {{/if}}
                                 <tr>
-                                    <td style="border: 2px solid {{primaryColor}}; border-radius: 8px; padding: 25px; color: #4b5563; font-size: 0.85rem; text-align: left; line-height: 1.8;">
-                                        <div style="font-weight: 600; margin-bottom: 12px; font-size: 0.875rem;">ACH DELIVERY INSTRUCTIONS:</div>
+                                    <td style="border: 2px solid #4b5563; padding: 25px; font-size: 0.85rem; text-align: left; line-height: 1.8;">
+                                        <div style="font-weight: 600; margin-bottom: 12px; font-size: 0.875rem; color: #4b5563;">ACH DELIVERY INSTRUCTIONS:</div>
                                         <div>Beneficiary Bank: JP Morgan Chase</div><div>ABA Routing Number: 267084131</div><div>Account Name: INSPYR Solutions, LLC</div><div>Account Number: 909331909</div>
                                         <div>Remittance: cashposting@INSPYRSolutions.com</div>
                                         <div style="margin-top: 12px; font-style: italic;">Please include your invoice number with your payment.</div>
@@ -169,7 +177,7 @@ const emailMessage = `<!DOCTYPE html>
                           {{#if subTotal}}
                             <tr>
                                 <td style=" padding: 8px 0; font-size: 0.95rem;">SUBTOTAL</td>
-                                <td style="padding: 8px 20px 8px 0; font-size: 0.95rem; text-align: right;">{{ subTotal}}</td>
+                                <td style="padding: 8px 15px 8px 0; font-size: 0.95rem; text-align: right;">{{ subTotal}}</td>
                             </tr>
                           {{/if}}
                       {{/if}}
@@ -177,37 +185,37 @@ const emailMessage = `<!DOCTYPE html>
                       {{#if discounts}}
                         <tr>
                             <td style=" padding: 8px 0px; font-size: 0.95rem;">DISCOUNTS </td>
-                            <td style="padding: 8px 20px 8px 0; font-size: 0.95rem; text-align: right;">- {{ discounts}}</td>
+                            <td style="padding: 8px 15px 8px 0; font-size: 0.95rem; text-align: right;">-\${{ discounts}}</td>
                         </tr>
                       {{/if}}
                         {{#if totalTax}}<tr>
                             <td style="padding: 8px 0; font-size: 0.95rem;">TAX </td>
-                            <td style="padding: 8px 20px 8px 0; font-size: 0.95rem; text-align: right;">{{ totalTax}}</td>
+                            <td style="padding: 8px 15px 8px 0; font-size: 0.95rem; text-align: right;">\${{totalTax}}</td>
                         </tr>
                       {{/if}}
                   
                       {{#if totalAmount}}
                         <tr>
                             <td style="padding: 8px 0; font-size: 0.95rem;">TOTAL</td>
-                            <td style="padding: 8px 20px 8px 0; font-size: 0.95rem; text-align: right;">{{ totalAmount}}</td>
+                            <td style="padding: 8px 15px 8px 0; font-size: 0.95rem; text-align: right;">\${{totalAmount}}</td>
                         </tr>    
                       {{/if}}  
                       {{#if amountPaid}}      
                         <tr>
                             <td style="padding: 8px 0; font-size: 0.95rem;">PAYMENTS</td>
-                            <td style="padding: 8px 20px 8px 0; font-size: 0.95rem; text-align: right;">- {{ amountPaid}}</td>
+                            <td style="padding: 8px 15px 8px 0; font-size: 0.95rem; text-align: right;">-\${{amountPaid}}</td>
                         </tr> 
                       {{/if}}  
                        {{#if balanceDue}}   
                       <tr>
-                          <td colspan="2" style="padding: 20px 10px 0px 0; border-top: 1px solid #e5e7eb; font-size: 1.2rem; font-weight: 700; color: {{primaryColor}}; text-align: right;">
-                              BALANCE DUE {{ balanceDue}}
+                          <td colspan="2" style="padding: 20px 10px 0px 0; border-top: 1px solid #4b5563; font-size: 1.2rem; font-weight: 700; color: {{primaryColor}}; text-align: right;">
+                              BALANCE DUE \${{ balanceDue }}
                           </td>
                       </tr>
                       {{/if}}
                       {{#if isOverDue }}
                          <tr>
-                            <td colspan="2" style="padding: 10px 10px 0px 0; font-size: 1.2rem; font-weight: 700; color: #e74c3c; text-align: right;">
+                            <td colspan="2" style="padding: 10px 10px 0px 0; font-size: 1.2rem; font-weight: 700; color: #374151; color: #e74c3c; text-align: right;">
                                 OVERDUE {{dueDate}}
                             </td>
                         </tr>
@@ -222,8 +230,8 @@ const emailMessage = `<!DOCTYPE html>
 
 const data = {
   invoiceNumber: 1049438,
-  transactionDate: "2024-04-20",
-  dueDate: "2025-05-20",
+  transactionDate: "04/20/2025",
+  dueDate: "05/20/2025",
   customerNumber: 2189153,
   collector: "Rachel Gonzalez",
   collectorEmail: "rgonzalez@inspyrsolutions.com",
@@ -240,22 +248,22 @@ const data = {
   lineItems: [
     {
       service: "Invoice 1 of 2 ",
-      serviceDate: "2025-04-12",
+      serviceDate: "04/12/2025",
       description:
         "Southern Ionics Incorporated - INSPYR-2024-12-30-11 - Fidelity_401K Import",
       quantity: "1",
-      rate: "1800",
-      amount: "1800",
+      rate: "1800.00",
+      amount: "1800.00",
     },
   ],
-  subTotal: 1880,
+  subTotal: "1880.0",
   discounts: 0,
-  totalAmount: 1880,
+  totalAmount: "1880.00",
   amountPaid: 0,
-  balanceDue: 1880,
+  balanceDue: "1880.00",
   customMessage: "Thank you for your business and have a great day!",
   isOverDue: true,
-  primaryColor: "#0277BD",
+  primaryColor: "#0068FF",
 };
 
 const template = Handlebars.compile(emailMessage);

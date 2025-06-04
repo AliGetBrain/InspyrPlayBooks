@@ -14,20 +14,27 @@ const emailMessage = `
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Call Summary</title>
   </head>
-<body
-    style="font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #1f2937; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #f9fafb;">
-        <div style="margin-bottom: 12px; background: {{primaryColor}}; border-radius: 8px 8px 0 0; padding: 12px; text-align: center; font-family: Arial, Helvetica, sans-serif;">
+<body style="font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #1f2937; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #F8FBFF;">
+<!-- Header -->
+    <div style="margin-bottom: 12px; background: white; border-color:{{primaryColor}}; border-bottom: 3px solid {{primaryColor}}; border-radius: 8px; text-align: center; font-family: Arial, Helvetica, sans-serif;">
         <table width="100%" cellpadding="0" cellspacing="0" border="0">
             <tr>
-                <td>
-                    <h1 style="color: white; margin: 0; font-size: 1.5rem; font-weight: 600; letter-spacing: 0.025em;">CALL SUMMARY</h1>
-                    <p style="color: rgba(255, 255, 255, 0.9); margin: 8px 0 0 0; font-size: 1rem;">{{contactCompanyName}} - {{callDate}}</p>
-                </td>
+              <td>
+                <div style="margin: 15px 20px 0 0;">
+                  <img src="https://raw.githubusercontent.com/AliGetBrain/Logo-Storage/main/IS_logo-full_RGB_250x80.png" width="250" height="80" alt="Logo">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2 style="margin: 0 0 5px 0; font-weight: 600; letter-spacing: 0.025em;"><span style="color: {{primaryColor}};">CALL SUMMARY</span></h2>
+                <p style="font-weight: 600; margin: 0 0 15px 0; font-size: 1rem;">{{contactCompanyName}} - {{callDate}}</p>
+              </td>
             </tr>
         </table>
-    </div>
-    <div style="background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); position: relative; overflow: hidden;">
+    </div>    
 
+    <div style="background: white; border-radius: 12px; padding: 40px; position: relative; overflow: hidden;">
     <table
       cellpadding="0"
       cellspacing="0"
@@ -44,9 +51,8 @@ const emailMessage = `
             border="0"
             width="100%"
             style="
-              background-color: #ffffff;
+              background-color: #F8FBFF;
               border-radius: 6px;
-              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             "
           >
             <tr>
@@ -68,14 +74,14 @@ const emailMessage = `
                       width="50%"
                       style="vertical-align: top; padding-right: 10px"
                     >
-                      <p style="margin: 0 0 5px 0; font-weight: bold; color: #666666">
-                        Client:
+                      <p style="margin: 0 0 5px 0;">
+                        <strong>Client:</strong>
                       </p>
                       <p style="margin: 0 0 10px 0; color: #333333">
                         {{contactCompanyName}}
                       </p>
-                       <p style="margin: 0 0 5px 0; font-weight: bold; color: #666666">
-                        Client Email:
+                       <p style="margin: 0 0 5px 0;">
+                        <strong>Client Email:</strong>
                       </p>
                       <p style="margin: 0 0 10px 0; color: #333333">
                         {{contactEmail}}
@@ -83,16 +89,16 @@ const emailMessage = `
                     </td>
                     <td
                       width="50%"
-                      style="vertical-align: top; padding-left: 10px"
+                      style="vertical-align: top; padding-left: 10px" 
                     >
-                      <p style="margin: 0 0 5px 0; font-weight: bold; color: #666666">
-                       Customer #
+                      <p style="margin: 0 0 5px 0;">
+                       <strong>Customer #</strong>
                       </p>
                       <p style="margin: 0 0 10px 0; color: #333333">
                         {{customerNumber}}
                       </p>
-                       <p style="margin: 0 0 5px 0; font-weight: bold; color: #666666">
-                        Call Date:
+                       <p style="margin: 0 0 5px 0;">
+                        <strong>Call Date:</strong>
                       </p>
                       <p style="margin: 0 0 10px 0; color: #333333">
                         {{ callDate}}
@@ -115,9 +121,8 @@ const emailMessage = `
             border="0"
             width="100%"
             style="
-              background-color: #ffffff;
+              background-color: #F8FBFF;
               border-radius: 6px;
-              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             "
           >
             <tr>
@@ -145,19 +150,19 @@ const emailMessage = `
                     width="100%"
                     style="
                       margin-bottom: 10px;
-                      background-color: #f9f9f9;
+                      background-color: #F8FBFF;
                       border-left: 4px solid #4caf50;
                       border-radius: 3px;
                     "
                   >
-                    <tr>
+                    <tr style="background-color: white; border-radius: 8px;"> 
                       <td style="padding: 20px">
                         <p style="margin: 0; font-weight: bold; font-size: 16px">
                           Invoice #{{invoiceNumber}}
                         </p>
                       </td>
                         <td width="55%">
-                          <p style="margin: 0 0 0 0; color: #666666">
+                          <p style="margin: 0 0 0 0; color: #4b5563">
                             Status:
                             <span style="color: #4caf50; font-weight: bold">
                             Scheduled for {{ promiseDate}}
@@ -175,12 +180,12 @@ const emailMessage = `
                   width="100%"
                   style="
                     margin-bottom: 10px;
-                    background-color: #f9f9f9;
+                    background-color: #F8FBFF;
                     border-left: 4px solid #ff9800;
                     border-radius: 3px;
                   "
                 >
-                  <tr>
+                  <tr style="background-color: white; border-radius: 8px;">
                     <td style="padding: 20px">
                       <p style="margin: 0; font-weight: bold; font-size: 16px">
                         Invoice #{{invoiceNumber}}
@@ -206,12 +211,12 @@ const emailMessage = `
                   width="100%"
                   style="
                     margin-bottom: 10px;
-                    background-color: #f9f9f9;
+                    background-color: #F8FBFF;
                     border-left: 4px solid #f44336;
                     border-radius: 3px;
                   "
                 >
-                  <tr>
+                  <tr style="background-color: white; border-radius: 8px;">
                     <td style="padding: 20px">
                       <p style="margin: 0; font-weight: bold; font-size: 16px">
                         Invoice #{{invoiceNumber}}
@@ -245,9 +250,8 @@ const emailMessage = `
             border="0"
             width="100%"
             style="
-              background-color: #ffffff;
+              background-color: #F8FBFF;
               border-radius: 6px;
-              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             "
           >
             <tr>
@@ -284,7 +288,6 @@ const emailMessage = `
               style="
                 background-color: #fff8e1;
                 border-radius: 6px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
                 border-left: 4px solid #ff9800;
               "
             >
@@ -330,7 +333,6 @@ const emailMessage = `
               style="
                 background-color: #fff8e1;
                 border-radius: 6px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
                 border-left: 4px solid #ff9800;
               "
             >
@@ -369,9 +371,8 @@ const emailMessage = `
             border="0"
             width="100%"
             style="
-              background-color: #ffffff;
+              background-color:  #F8FBFF;
               border-radius: 6px;
-              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
               margin-bottom: 20px;
             "
           >
@@ -454,7 +455,7 @@ const data = {
   clientUpdates:
     "The client has requested to change their billing contact. The new information is ...",
   callRecordingLink: "templink",
-  primaryColor: "#0277BD",
+  primaryColor: "#0068FF",
 };
 
 const template = Handlebars.compile(emailMessage);

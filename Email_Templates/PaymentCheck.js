@@ -14,23 +14,25 @@ const emailMessage = `<!DOCTYPE html>
     <title>Payment not found</title>
 </head>
 
-<body
-    style="font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #1f2937; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #f9fafb;">
+<body style="font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #1f2937; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #F8FBFF;">
+    <div style="margin-bottom: 12px; background: white; border-color:{{primaryColor}}; border-bottom: 3px solid {{primaryColor}}; border-radius: 8px; text-align: center; font-family: Arial, Helvetica, sans-serif;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td>
+              <div style="margin: 15px 20px 0 0;">
+                <img src="https://raw.githubusercontent.com/AliGetBrain/Logo-Storage/main/IS_logo-full_RGB_250x80.png" width="250" height="80" alt="Logo">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h2 style="margin: 0 0 15px 0; font-weight: 600; letter-spacing: 0.025em;">PAYMENTS <span style="color: {{primaryColor}};">NOT FOUND</span></h2>
+            </td>
+          </tr>
+      </table>
+    </div>    
     <div
-        style="margin-bottom: 12px; background: {{primaryColor}}; border-radius: 8px 8px 0 0; padding: 24px; text-align: center; font-family: Arial, Helvetica, sans-serif;">
-        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-            <tr>
-                <td>
-                    <h1 style="color: white; margin: 0; font-size: 1.5rem; font-weight: 600; letter-spacing: 0.025em;">
-                        INVOICE PAYMENTS NOT FOUND</h1>
-                    <p style="color: rgba(255, 255, 255, 0.9); margin: 8px 0 0 0; font-size: 1rem;">INSPYR SOLUTIONS LLC
-                    </p>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div
-        style="background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); position: relative; overflow: hidden;">
+        style="background: white; border-radius: 12px; padding: 40px; position: relative; overflow: hidden;">
 
          <div style="margin-bottom: 12px; padding: 24px; background-color: white; border-radius: 8px; color: #4b5563; font-family: Arial, Helvetica, sans-serif;">
         <p style="margin: 0 0 16px 0; font-size: 1rem; font-weight: 500;">Hello{{#if contactName}} {{contactName}},{{else}},{{/if}}</p>
@@ -50,17 +52,17 @@ const emailMessage = `<!DOCTYPE html>
                         style="border-radius: 8px">
                         <!-- Table Header -->
                         <tr style="border-radius: 8px 8px 0 0;">
-                            <td style="background-color: #f9f9f9; padding: 16px; width: 33%; vertical-align: top; text-align: center;">
+                            <td style="background-color: #F8FBFF; padding: 16px; width: 33%; vertical-align: top; text-align: center;">
                                 <p style="margin: 0; font-size: 14px; color: #333333; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
                                     Invoice #
                                 </p>
                             </td>
-                            <td style="background-color: #f9f9f9; padding: 16px; width: 33%; vertical-align: top; text-align: center;">
+                            <td style="background-color: #F8FBFF; padding: 16px; width: 33%; vertical-align: top; text-align: center;">
                                 <p style="margin: 0; font-size: 14px; color: #333333; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
                                     Amount
                                 </p>
                             </td>
-                            <td style="background-color: #f9f9f9; padding: 16px; width: 33%; vertical-align: top; text-align: center;">
+                            <td style="background-color: #F8FBFF; padding: 16px; width: 33%; vertical-align: top; text-align: center;">
                                 <p style="margin: 0; font-size: 14px; color: #333333; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
                                     Due Date
                                 </p>
@@ -103,7 +105,7 @@ const emailMessage = `<!DOCTYPE html>
         </div>
 
         <!-- Automated message -->
-         <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; color: #6b7280; line-height: 1.4; text-align: center;">
+         <div style="margin-top: 15px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; color: #6b7280; line-height: 1.4; text-align: center;">
           <p style="margin: 0;">
               <strong style="color: #4b5563;">For questions, comments, or concerns contact your AR Specialist at <span style="color: #2563eb;">{{collectorEmail}}</span>.</strong>
           </p>
@@ -112,7 +114,6 @@ const emailMessage = `<!DOCTYPE html>
           </p>
       </div>
         </div>
-        
 </body>
 </html>
 `;
@@ -135,7 +136,7 @@ const data = {
       dueDate: "2025-05-19",
     },
   ],
-  primaryColor: "#0277BD",
+  primaryColor: "#0068FF",
 };
 
 const template = Handlebars.compile(emailMessage);
