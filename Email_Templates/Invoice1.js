@@ -34,7 +34,7 @@ const emailMessage = `<!DOCTYPE html>
      
     <!-- Message Section -->
     <div style="margin-bottom: 12px; padding: 24px; background-color: white; border-radius: 8px; color: #4b5563; font-family: Arial, Helvetica, sans-serif;">
-        <p style="margin: 0 0 16px 0; font-size: 1rem; font-weight: 500;">Hello{{#if contactName}} {{contactName}},{{else}},{{/if}}</p>
+        <p style="margin: 0 0 16px 0; font-size: 1rem; font-weight: 500;">Hello,</p>
 
         <p style="margin: 0 0 16px 0; font-size: 1rem; line-height: 1.6;">
             I hope you're doing well! Please find attached <span style="font-weight: 600; color: #4b5563;">Invoice #{{invoiceNumber}}</span> for your records. <br>
@@ -220,6 +220,12 @@ const emailMessage = `<!DOCTYPE html>
                 </td>
             </tr>
         </table>
+       <div style="margin-top: 15px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; color: #6b7280; line-height: 1.4; text-align: center;">
+
+        <p style="margin: 15px 0 0 0; font-size: 0.70rem; color: #9ca3af; line-height: 1.3;">
+            <strong>Confidentiality Note:</strong> This e-mail, and any attachment to it, contains privileged and confidential information intended only for the use of the individual(s) or entity named on the e-mail. If the reader of this e-mail is not the intended recipient, or the employee or agent responsible for delivering it to the intended recipient, you are hereby notified that reading this e-mail is strictly prohibited. If you have received this e-mail in error, please immediately return it to the sender and delete it from your system. Thank you.
+        </p>
+    </div> 
     </div>
 </body>
 </html>`;

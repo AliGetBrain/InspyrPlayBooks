@@ -1,0 +1,25 @@
+{
+  "name": "staging call pathway version 2",
+  "playbook": {
+    "pathway_id": "6b480cea-67ba-4ebe-8dc4-9fc90c7f950f",
+    "pathway_version": 2,
+    "voice": "Alexa",
+    "first_sentence": "",
+    "wait_for_greeting": true,
+    "block_interruptions": false,
+    "interruption_threshold": 150,
+    "temperature": 0.2,
+    "language": "en-US",
+    "record": true,
+    "retry": {
+      "wait": 5,
+      "voicemail_action": "hangup"
+    },
+    "max_duration": 10,
+    "reduce_latency": true,
+    "voicemail_action": "hangup",
+    "answered_by_enabled": true,
+    "analysis_schema": {}
+  },
+  "type": "bland_conversational_call"
+}

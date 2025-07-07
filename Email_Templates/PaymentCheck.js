@@ -35,7 +35,7 @@ const emailMessage = `<!DOCTYPE html>
         style="background: white; border-radius: 12px; padding: 40px; position: relative; overflow: hidden;">
 
          <div style="margin-bottom: 12px; padding: 24px; background-color: white; border-radius: 8px; color: #4b5563; font-family: Arial, Helvetica, sans-serif;">
-        <p style="margin: 0 0 16px 0; font-size: 1rem; font-weight: 500;">Hello{{#if contactName}} {{contactName}},{{else}},{{/if}}</p>
+        <p style="margin: 0 0 16px 0; font-size: 1rem; font-weight: 500;">Hello,</p>
 
         <p style="margin: 0 0 16px 0; font-size: 1rem; line-height: 1.6">
            During our recent phone conversation, you mentioned the following invoices were paid:
