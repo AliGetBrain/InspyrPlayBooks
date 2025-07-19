@@ -32,17 +32,12 @@ const emailMessage = `<!DOCTYPE html>
         </table>
     </div>    
      
-    <!-- Message Section -->
+     <!-- Message Section -->
     <div style="margin-bottom: 12px; padding: 24px; background-color: white; border-radius: 8px; color: #4b5563; font-family: Arial, Helvetica, sans-serif;">
         <p style="margin: 0 0 16px 0; font-size: 1rem; font-weight: 500;">Hello,</p>
         
         <p style="margin: 0 0 16px 0; font-size: 1rem; line-height: 1.6;">
-        Hope this email finds you well.
-        </p>
-
-        <p style="margin: 0 0 16px 0; font-size: 1rem; line-height: 1.6;">
-            Friendly reminder, our records indicate  <span style="font-weight: 600; color: #374151;">Invoice #{{invoiceNumber}}</span> is coming due on <span style="font-weight: 600; color: #374151;">{{dueDate}}</span>. <br> We would like
-            to confirm you've received them and that they are scheduled for timely payment.
+           This is a friendly reminder that <span style="font-weight: 600; color: #374151;">Invoice #{{invoiceNumber}}</span> is due in a few days on <span style="font-weight: 600; color: #374151;">{{dueDate}}</span>.
         </p>
         
         <p style="margin: 0 0 16px 0; font-size: 1rem; line-height: 1.6;">
@@ -53,7 +48,7 @@ const emailMessage = `<!DOCTYPE html>
             Best regards,<br>
             <span style="font-weight: 500;">Accounts Receiveable Department</span>
         </p>
-    </div>
+    </div> 
   
     <!-- Company Info -->
     <div style="background: white; border-radius: 8px; padding: 40px; position: relative; overflow: hidden;">

@@ -261,7 +261,7 @@ const data = {
   subTotal: "1880.0",
   discounts: 0,
   totalAmount: "1880.00",
-  amountPaid: 0,
+  amountPaid: "",
   balanceDue: "1880.00",
   customMessage: "Thank you for your business and have a great day!",
   isOverDue: true,

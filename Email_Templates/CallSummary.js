@@ -417,44 +417,26 @@ const emailMessage = `
 `;
 
 const data = {
-  contactCompanyName: "Pinnacle Systems",
-  contactEmail: "pinnacle@email.com",
-  callDate: "2025-05-12",
-  customerNumber: 1101,
+  contactCompanyName: "Cranial Technologies, Inc.",
+  contactEmail: "cranialtech@email.com",
+  callDate: "07/13/2025",
+  customerNumber: "1087331",
   hasEscalationNotes: true,
   invoiceData: [
     {
-      invoiceNumber: "1001",
       tag: "shouldEscalate",
       promiseDate: null,
+      invoiceNumber: "1068180",
       escalationNotes:
-        "The client said they are unable to pay the invoice becuase the project is not complete",
-    },
-    {
-      invoiceNumber: "1003",
-      tag: "willPay",
-      promiseDate: "2025-05-12",
-      escalationNotes: null,
-    },
-    {
-      invoiceNumber: "1002",
-      tag: "shouldEscalate",
-      promiseDate: null,
-      escalationNotes:
-        "The client says they can not pay the invoice because the invoice is incorrect",
-    },
-    {
-      invoiceNumber: "1004",
-      tag: "wasPaid",
-      promiseDate: null,
-      escalationNotes: null,
+        "The client is experiencing issues with the integration process and has requested a refund instead of paying the invoice.",
     },
   ],
   callSummary:
-    "Pinnacle Systems was contacted regarding two open invoices. The client was unsure about Invoice #1001 and requested it to be resent. The client confirmed they will pay Invoice #1002 by the end of day Thursday, May 8th. The payment for Invoice #1002 will be made by check from Pinnacle. The client was unclear about the status of Invoice #1001 and requested further clarification. The accounts receivable team will resend Invoice #1001 and look into it further to ensure everything is in order.",
+    "Cranial Technologies, Inc. has an open invoice, #1068180, which was due on July 7, 2025. The client is experiencing issues with the integration process and has requested a refund instead of paying the invoice. The client also provided an updated contact number for future communication. The call was to discuss the status of open invoices and address the client's concerns. Cranial Technologies, Inc. is currently experiencing problems across the board and does not plan to pay the invoice until the issues are resolved. The accounts receivable team will review the client's concerns and reach out if needed.",
   clientUpdates:
-    "The client has requested to change their billing contact. The new information is ...",
-  callRecordingLink: "templink",
+    "The client is experiencing ongoing issues with the integration process and has requested a refund. The client also provided an updated contact number for future communication, as they will be leaving the company soon. The new contact is Jessica Rodriguez with phone number 9549384942.",
+  callRecordingLink:
+    "https://drive.google.com/file/d/11uWMW_5VSksnLeDLEV47nNpjFy8uTu43/view?usp=sharing",
   primaryColor: "#0068FF",
 };
 
