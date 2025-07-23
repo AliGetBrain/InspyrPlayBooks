@@ -40,7 +40,11 @@ const emailMessage = `<!DOCTYPE html>
             I hope you're doing well! Please find attached <span style="font-weight: 600; color: #4b5563;">Invoice #{{invoiceNumber}}</span> for your records. <br>
             This invoice is due on <span style="font-weight: 600; color: #4b5563;">{{dueDate}}</span>. Let us know if you have any questions—we're happy to help.
         </p>
-
+        
+        <p style="margin: 0 0 16px 0; font-size: 1rem; line-height: 1.6;">
+          <strong> If any changes are required to the invoice delivery email, please be sure to ‘Reply All’ to this communication. </strong>
+        </p>
+       
         <p style="margin: 0; font-size: 1rem;">
             Best regards,<br>
             <span style="font-weight: 500;">Accounts Receiveable Department</span>
@@ -53,7 +57,7 @@ const emailMessage = `<!DOCTYPE html>
             <div>
                 <div style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 12px; font-weight: 600;">REMIT TO</div>
                 <div style="font-weight: 600; color: #4b5563;">INSPYR Solutions, LLC</div>
-                <div>PO Drawer 1217</div>
+                <div>P.O. Box 737249</div>
                 <div>Dallas, TX 75373-7249</div>
             </div>
         </div>

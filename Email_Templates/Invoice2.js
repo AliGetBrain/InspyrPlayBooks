@@ -60,7 +60,7 @@ const emailMessage = `<!DOCTYPE html>
             <div>
                 <div style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 12px; font-weight: 600;">REMIT TO</div>
                 <div style="font-weight: 600; color: #4b5563;">INSPYR Solutions, LLC</div>
-                <div>PO Drawer 1217</div>
+                <div>P.O. Box 737249</div>
                 <div>Dallas, TX 75373-7249</div>
             </div>
         </div>
